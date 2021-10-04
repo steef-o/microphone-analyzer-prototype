@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Lottie <> Audio Visualization Demo</title>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@0.3.0/dist/lottie-player.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <h2>Frydenbø <> Audio Visualization Demo</h2>
+            <p>
+                Allow access to microphone and speak to see the Lottie animation
+                respond to the audio. Uses the Web Audio API and
+                AudioWorkletProcessor to control the seek of the animation.
+            </p>
+            <lottie-player
+                src="https://assets6.lottiefiles.com/packages/lf20_9pke1d1g.json"
+                style="width: 400px; height: 400px;"
+            ></lottie-player>
+            <h2>Kom'an igjen, ta no i litt!</h2>
+        </div>
+
+        <script src="js/index.js"></script>
+    </body>
+</html>
