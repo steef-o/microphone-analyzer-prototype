@@ -33,6 +33,11 @@ function render() {
     requestAnimationFrame(render);
 }
 
+navigator.getUserMedia =
+    navigator.getUserMedia ||
+    navigator.webkitGetUserMedia ||
+    navigator.mozGetUserMedia;
+
 navigator.getUserMedia(
     { audio: true },
     onMicrophoneGranted,
