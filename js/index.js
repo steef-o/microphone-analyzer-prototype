@@ -32,14 +32,21 @@ function render() {
 
     requestAnimationFrame(render);
 }
-
-navigator.getUserMedia =
-    navigator.getUserMedia ||
-    navigator.webkitGetUserMedia ||
-    navigator.mozGetUserMedia;
-
-navigator.getUserMedia(
-    { audio: true },
-    onMicrophoneGranted,
-    onMicrophoneDenied
-);
+if (!navigator.mediaDevices && !navigator.mediaDevices.getUserMedia) {
+    navigator.getUserMedia =
+        navigator.getUserMedia ||
+        navigator.webkitGetUserMedia ||
+        navigator.mozGetUserMedia;
+    navigator.getUserMedia(
+        { audio: true },
+        onMicrophoneGranted,
+        onMicrophoneDenied
+    );
+} else {
+    navigator.mediaDevices
+        .getUserMedia({
+            audio: true
+        })
+        .then(onMicrophoneGranted)
+        .catch(onMicrophoneDenied);
+}
